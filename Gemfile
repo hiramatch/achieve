@@ -46,9 +46,15 @@ group :development, :test do
   gem 'letter_opener'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'dotenv-rails'
 end
 
 gem 'twitter-bootstrap-rails'
 gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'faker'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'rmagick'
