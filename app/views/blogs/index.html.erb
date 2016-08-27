@@ -6,7 +6,7 @@
     <%= link_to "戻る", root_path, class: 'btn btn-default' %>
     <% @blogs.each do |blog| %>
       <div class="row">
-        <%= profile_img2(User.find(blog.user_id)) if profile_img2(User.find(blog.user_id)) %> <%= User.find(blog.user_id).name %>さんが投稿しました
+        <%= profile_img(User.find(blog.user_id), "40x40") if profile_img(User.find(blog.user_id), "40x40") %> <%= User.find(blog.user_id).name %>さんが投稿しました
 
         <h4><strong><%= blog.title %></strong></h4>
         <p><%= blog.content %></p>
