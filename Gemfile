@@ -45,6 +45,7 @@ group :development, :test do
   gem 'spring'
   gem 'letter_opener'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'better_errors'
   gem 'dotenv-rails'
 end
