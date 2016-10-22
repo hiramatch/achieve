@@ -4,6 +4,8 @@
     <div>
       <% if @users.blank? %>
         依頼するユーザーがいません。
+      <% elsif @tasks.blank? %>
+        依頼するタスクがありません。
       <% elsif current_user.tasks.present? %>
         <%= render 'form' %>
       <% else %>

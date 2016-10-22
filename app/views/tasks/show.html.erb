@@ -1,39 +1,20 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @task.user.email %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @task.content %>
-</p>
-
-<p>
-  <strong>Deadline:</strong>
-  <%= @task.deadline %>
-</p>
-
-<p>
-  <strong>Charge:</strong>
-  <%= @task.charge.name %>
-</p>
-
-<p>
-  <strong>Done:</strong>
-  <%= if @task.done? then "完了" else "未完了" end %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @task.status == 1? "対応中" : "未着手" %>
-</p>
-
-<%= link_to 'Edit', edit_user_task_path(@task.user, @task) %> |
-<%= link_to 'Back', user_tasks_path(@task.user) %>
+<div class="child row">
+  <div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <h2>タスク詳細</h2>
+    <div class="blog-text">
+      <p class="left"><strong>作成者</strong></p>
+      <p class="left"><%= @task.user.name %></p>
+      <p class="left"><strong>タイトル</strong></p>
+      <p class="left"><%= @task.title %></p>
+      <p class="left"><strong>内容</strong></p>
+      <p class="left"><%= @task.content %></p>
+      <p class="left"><strong>締切:</strong></p>
+      <p class="left"><%= @task.deadline.strftime("%y/%m/%d %H:%M") %></p>
+      <p class="left"><strong>担当者</strong></p>
+      <p class="left"><%= @task.charge.name %></p>
+      <p class="left"><%= if @task.done? then "完了" else "未完了" end %></p>
+   </div>
+  </div>
+</div>
+<%= link_to '戻る', user_tasks_path(@task.user), class: 'btn btn-default' %>
