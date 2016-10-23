@@ -30,6 +30,7 @@
               <li><%= link_to "ブログ", blogs_path %></li>
               <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
               <li><%= link_to '新規依頼', user_submit_requests_path(current_user) if user_signed_in? %></li>
+              <li><%= link_to "メッセージ", conversations_path %></li>
              </ul>
            </li>
            <% if user_signed_in? %>

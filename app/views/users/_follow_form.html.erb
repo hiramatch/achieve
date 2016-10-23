@@ -12,5 +12,6 @@
         <%= f.submit "つながりを解除", class: "btn btn-large" %>
       <% end %>
     <% end %>
+    <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
   <% end %>
 </div>
