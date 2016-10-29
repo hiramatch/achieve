@@ -13,10 +13,10 @@ class CommentsController < ApplicationController
           Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
             message: 'あなたの作成したブログにコメントが付きました'
           })
+          Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
+            unread_count: Notification.where(user_id: @comment.blog.user.id, read: false).count
+          })
         end
-        Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
-          uncreate_count: Notification.where(user_id: @comment.blog.user.id).count
-        })
         format.json { render :show, status: :created, location: @comment }
         # JS形式でレスポンスを返します。
         format.js { render :index }
