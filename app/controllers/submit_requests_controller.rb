@@ -1,6 +1,6 @@
 class SubmitRequestsController < ApplicationController
   before_action :set_submit_request, only: [:show, :edit, :update, :destroy]
-  before_action :submit_params,only: [:approve, :unapprove, :reject]
+  before_action :submit_params, only: [:approve, :unapprove, :reject]
   before_action :authenticate_user!
 
   def index
